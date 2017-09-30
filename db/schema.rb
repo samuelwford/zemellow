@@ -11,9 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170930155140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "parts", force: :cascade do |t|
+    t.integer  "story_id"
+    t.string   "title"
+    t.text     "body"
+    t.integer  "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "parts", ["story_id"], name: "index_parts_on_story_id", using: :btree
+
+  create_table "stories", force: :cascade do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.string   "subtitle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "stories", ["slug"], name: "index_stories_on_slug", unique: true, using: :btree
+
+  add_foreign_key "parts", "stories"
 end

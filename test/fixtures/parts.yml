@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  story_id: 
+  title: MyString
+  body: MyText
+  order: 1
+
+two:
+  story_id: 
+  title: MyString
+  body: MyText
+  order: 1

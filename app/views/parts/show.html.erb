@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @part.story %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @part.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @part.body %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @part.order %>
+</p>
+
+<%= link_to 'Edit', edit_part_path(@part) %> |
+<%= link_to 'Back', parts_path %>

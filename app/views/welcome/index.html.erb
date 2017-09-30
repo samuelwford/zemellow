@@ -6,8 +6,9 @@
 </div>
 
 <div class="container content">
-  <div>
-    <h2>Title Here</h2>
-    <p>My awesome story goes here.</p>
-  </div>  
+  
+  <% @stories.each do |story| %>
+    <%= render story %>
+  <% end %>
+  
 </div>
