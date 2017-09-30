@@ -1,0 +1,29 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+body {
+  background-color: #a5becc;
+}
+
+.hero-banner {
+  background-color: #966c39;
+  padding-bottom: 32px;
+  padding-top: 32px;
+}
+
+.hero {
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: #FFE082;
+}
+
+.hero-title {
+  font-size: 4em;
+}
+.hero-subtitle {
+  font-size: 2em;
+}
+
+.content {
+  font-family: 'Libre Baskerville', serif;
+}
