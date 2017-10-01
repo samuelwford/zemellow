@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  resources :parts
 
-  resources :stories
-
+  namespace :admin do
+    resources :stories do
+      resources :parts
+    end
+  end
+  
+  resources :stories do
+    resources :parts
+  end
+  
   root 'welcome#index'
 end

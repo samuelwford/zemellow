@@ -13,7 +13,7 @@
   <h2>Table of Contents</h2>
   
   <% @story.parts.each do |part| %>
-    <p class="toc-chapter"><%= link_to part.title, url_for([@story, part]) %></p>
+    <p class="toc-chapter"><%= link_to part.title, part %></p>
   <% end %>
   
 </div>
