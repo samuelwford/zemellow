@@ -1,4 +1,4 @@
-class PartsController < ApplicationController
+class Admin::PartsController < ApplicationController
   before_action :set_part, only: [:show, :edit, :update, :destroy]
 
   # GET /parts

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :stories do
-    resources :parts
+  resources :stories, only: [:show] do
+    resources :parts, only: [:show]
   end
   
   root 'welcome#index'
