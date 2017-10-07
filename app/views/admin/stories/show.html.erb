@@ -1,19 +1,3 @@
-<div class="jumbotron hero-banner">
-  <div class="container">
-    <h1 class="hero hero-title">Zemmie</h1>
-    <p class="hero hero-subtitle">the mellow mango</p>
-  </div>
-</div>
+<h1 class="story-title"><%= @story.title %></h1>
+<p class="story-subtitle"><%= @story.subtitle %></p>
 
-<div class="container content">
-  
-  <h1 class="story-title"><%= @story.title %></h1>
-  <p class="story-subtitle"><%= @story.subtitle %></p>
-  
-  <h2>Table of Contents</h2>
-  
-  <% @story.parts.each do |part| %>
-    <p class="toc-chapter"><%= link_to part.title, part %></p>
-  <% end %>
-  
-</div>

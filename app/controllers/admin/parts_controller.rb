@@ -1,10 +1,11 @@
 class Admin::PartsController < ApplicationController
   before_action :set_part, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_story
+  
   # GET /parts
   # GET /parts.json
   def index
-    @parts = Part.all
+    @parts = @story.parts
   end
 
   # GET /parts/1
@@ -25,10 +26,11 @@ class Admin::PartsController < ApplicationController
   # POST /parts.json
   def create
     @part = Part.new(part_params)
+    @part.story = @story
 
     respond_to do |format|
       if @part.save
-        format.html { redirect_to @part, notice: 'Part was successfully created.' }
+        format.html { redirect_to [:admin, @story, @part], notice: 'Part was successfully created.' }
         format.json { render :show, status: :created, location: @part }
       else
         format.html { render :new }
@@ -66,9 +68,13 @@ class Admin::PartsController < ApplicationController
     def set_part
       @part = Part.find(params[:id])
     end
+    
+    def set_story
+      @story = Story.find(params[:story_id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def part_params
-      params.require(:part).permit(:story_id, :title, :body, :order)
+      params.require(:part).permit(:story_id, :slug, :title, :body, :order)
     end
 end

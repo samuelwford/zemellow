@@ -1,4 +1,4 @@
-<%= form_for(@part) do |f| %>
+<%= form_for [:admin, @story, @part] do |f| %>
   <% if @part.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@part.errors.count, "error") %> prohibited this part from being saved:</h2>
@@ -14,6 +14,10 @@
   <div class="field">
     <%= f.label :story_id %><br>
     <%= f.text_field :story_id %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug %>
   </div>
   <div class="field">
     <%= f.label :title %><br>

@@ -17,6 +17,14 @@ body {
   color: #FFE082;
 }
 
+.hero a {
+  color: #FFE082;
+}
+
+.hero a:hover {
+  text-decoration: none;
+}
+
 .hero-title {
   font-size: 4em;
 }

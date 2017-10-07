@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Story</th>
+      <th>Slug</th>
       <th>Title</th>
       <th>Body</th>
       <th>Order</th>
@@ -16,13 +17,14 @@
   <tbody>
     <% @parts.each do |part| %>
       <tr>
-        <td><%= part.story %></td>
+        <td><%= part.story.title %></td>
+        <td><%= part.slug %></td>
         <td><%= part.title %></td>
         <td><%= part.body %></td>
         <td><%= part.order %></td>
-        <td><%= link_to 'Show', part %></td>
-        <td><%= link_to 'Edit', edit_part_path(part) %></td>
-        <td><%= link_to 'Destroy', part, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', admin_story_part_path(id: part.story_id, part_id: part.id) %></td>
+        <td><%= link_to 'Edit', edit_admin_story_part_path(id:part.story_id, part_id: part.id) %></td>
+        <td><%= link_to 'Destroy', admin_story_part_path(id: part.story_id, part_id: part.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Part', new_part_path %>
+<%= link_to 'New Part', new_admin_story_part_path %>
