@@ -1,4 +1,4 @@
 <div class="story">
-  <h2><%= link_to story.title, story %></h2>
+  <h2><%= link_to story.title, story_path(story.slug || story.id) %></h2>
   <p><%= story.subtitle %></p>
 </div>
