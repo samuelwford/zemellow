@@ -1,1 +1,7 @@
-<p>todo</p>
+<div class="part-title"><%= @part.title %></div>
+
+<div class="part-story-title"><%= @part.story.title %></div>
+
+<div>
+  <%= markdown @part.body %>
+</div>

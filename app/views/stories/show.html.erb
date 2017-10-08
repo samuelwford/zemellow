@@ -1,8 +1,10 @@
-<h1 class="story-title"><%= @story.title %></h1>
-<p class="story-subtitle"><%= @story.subtitle %></p>
+<div class="story-title"><%= @story.title %></div>
+<div class="story-subtitle"><%= @story.subtitle %></dic>
 
-<h2>Table of Contents</h2>
+<div class="table-of-contents">Table of Contents</div>
 
-<% @story.parts.each do |part| %>
-  <p class="toc-chapter"><%= link_to part.title, show_story_part_path(id: @story.slug, part_id: part.slug) %></p>
-<% end %>
+<ol>
+  <% @story.parts.each do |part| %>
+    <li class="toc-chapter"><%= link_to part.title, show_story_part_path(id: @story.slug, part_id: part.slug) %></p>
+  <% end %>
+</ol>

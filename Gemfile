@@ -46,3 +46,6 @@ end
 ruby '2.2.0'
 gem 'puma'
 gem 'bootstrap', '~> 4.0.0.beta'
+
+gem 'redcarpet'
+gem 'bootstrap_form'

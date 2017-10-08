@@ -44,7 +44,7 @@ class Admin::PartsController < ApplicationController
   def update
     respond_to do |format|
       if @part.update(part_params)
-        format.html { redirect_to @part, notice: 'Part was successfully updated.' }
+        format.html { redirect_to [:admin, @story, @part], notice: 'Part was successfully updated.' }
         format.json { render :show, status: :ok, location: @part }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class Admin::PartsController < ApplicationController
   def destroy
     @part.destroy
     respond_to do |format|
-      format.html { redirect_to parts_url, notice: 'Part was successfully destroyed.' }
+      format.html { redirect_to admin_story_parts_url(@story), notice: 'Part was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

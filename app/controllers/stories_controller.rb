@@ -7,7 +7,7 @@ class StoriesController < ApplicationController
 
   # GET /:slug/:part_id
   def show_part
-    @part = Part.includes(:story).where(slug: params[:part_id], 'stories.slug' => params[:id]) || Part.find(params[:part_id])
+    @part = Part.includes(:story).where(slug: params[:part_id], 'stories.slug' => params[:id]).first || Part.find(params[:part_id])
   end
   
   private
