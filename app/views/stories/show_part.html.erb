@@ -1,7 +1,8 @@
-<div class="part-title"><%= @part.title %></div>
+<h1 class="part-title"><%= @part.title %></h1>
 
-<div class="part-story-title"><%= @part.story.title %></div>
+<h2 class="part-story-title"><%= link_to @part.story.title, story_path(@part.story.slug || @part.story_id) %></h2>
 
 <div>
   <%= markdown @part.body %>
 </div>
+

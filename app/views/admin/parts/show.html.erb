@@ -25,5 +25,5 @@
   <%= @part.order %>
 </p>
 
-<%= link_to 'Edit', edit_part_path(@part) %> |
-<%= link_to 'Back', parts_path %>
+<%= link_to 'Edit', [:admin, @story, @part] %> |
+<%= link_to 'Back', admin_story_parts_path(@story) %>

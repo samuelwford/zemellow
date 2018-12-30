@@ -35,3 +35,20 @@ body {
 .content {
   font-family: 'Libre Baskerville', serif;
 }
+
+.part-title {
+  font-size: 2em;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.part-story-title {
+  font-size: 1.1em;
+  text-align: center;
+  padding-bottom: 30px;
+  font-style: italic;
+}
+
+.part-story-title a {
+  color: #212529;
+}
